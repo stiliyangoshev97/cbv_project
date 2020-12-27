@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+{% extends 'cbv_app/cbv_app_base.html' %}
+
+<div class="container">
+	<h1>Welcome to the songs create page!</h1>
+
+
+	{% block body_block %}
+
+	    {% if not form.instance.pk %}
+
+            <h4>Create School</h4>
+
+        {% else %}
+
+            <h4>Update School</h4>
+
+	    {% endif %}
+
+	    <form method="POST">
+	    	{% csrf_token %}
+	    	{{ form.as_p }}
+	    	<input type="submit" value="submit" class="btn btn-primary" name="">
+	    </form>
+
+	{% endblock %}
+</div>

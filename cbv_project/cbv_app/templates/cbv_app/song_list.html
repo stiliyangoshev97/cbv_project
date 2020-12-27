@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+{% extends 'cbv_app/cbv_app_base.html' %}
+
+<div class="container">
+	<h1>Welcome to the songs list page!</h1>
+
+
+	{% block body_block %}
+
+	    {% for song in songs %}
+	        <p><a href="{{ song.id }}">{{ song.name }}</a></p>
+	    {% endfor %}
+
+	{% endblock %}
+</div>

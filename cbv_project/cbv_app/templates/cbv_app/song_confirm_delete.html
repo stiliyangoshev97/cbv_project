@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+{% extends 'cbv_app/cbv_app_base.html' %}
+
+<div class="container">
+	<h1>Welcome to the deleting page!</h1>
+
+
+	{% block body_block %}
+
+        <h2>Delete {{ song.name }}</h2>
+
+        <form method="POST">
+	        {% csrf_token %}
+	        <input class="btn btn-danger" type="submit" name="" value="Delete">
+	
+	        <!-- school is a template name in views.py for deleting Schools -->
+	        <a href="{% url 'cbv_app:detail' pk=song.pk%}">Cancel</a>
+</form>
+
+
+	{% endblock %}
+</div>

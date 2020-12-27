@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+{% extends 'cbv_app/cbv_app_base.html' %}
+
+<div class="container">
+	<h1>Welcome to the songs list page!</h1>
+
+
+	{% block body_block %}
+
+	    <p>Song Name: {{ song_detail.name }}</p>
+	    <p>Artist Name: {{ song_detail.artist }}</p>
+
+	    {% for d in song_detail.details.all %}
+
+	        <p>{{ d.genre }} genre performed by {{ d.song.artist}}</p>
+
+	    {% endfor %}
+
+	{% endblock %}
+</div>
